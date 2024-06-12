@@ -5,6 +5,7 @@ import Card from "./components/Card.jsx";
 
 function App() {
   const [count, setCount] = useState(0);
+  const [isTrue, setIsTrue] = useState(false);
 
   // const handleIncreaseCount = () => {
   //   if (count >= 5) {
@@ -59,6 +60,10 @@ function App() {
     },
   ];
 
+  const changeFlag = () => {
+    setIsTrue(!isTrue);
+  };
+
   return (
     <div className="flex items-center justify-center flex-col">
       <NavBar />
@@ -84,6 +89,16 @@ function App() {
         </button>
       </div>
       <span className="redColor">{count}</span> */}
+
+      <div className="flex items-center flex-col mt-10">
+        {isTrue ? <span>Yes its true</span> : <span>No its false</span>}
+        <button
+          className="px-4 py-2 bg-blue-500 text-white rounded-lg"
+          onClick={changeFlag}
+        >
+          Change the flag
+        </button>
+      </div>
     </div>
   );
 }
