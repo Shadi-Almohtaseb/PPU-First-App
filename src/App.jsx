@@ -24,7 +24,8 @@ function App() {
       price: 99.99,
       description:
         "High-quality wireless headphones with noise-cancellation feature and long-lasting battery life.",
-      imageUrl: "https://images.unsplash.com/photo-1517317687508-3e9a4d40bdc3",
+      imageUrl:
+        "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8V2lyZWxlc3MlMjBIZWFkcGhvbmVzfGVufDB8fDB8fHww",
     },
     {
       name: "Smart Watch",
@@ -38,32 +39,35 @@ function App() {
       price: 49.99,
       description:
         "Portable Bluetooth speaker with powerful sound and water-resistant design.",
-      imageUrl: "https://images.unsplash.com/photo-1592415484162-cb2b16bfc9d0",
+      imageUrl:
+        "https://images.unsplash.com/photo-1589256469067-ea99122bbdc4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Ymx1ZXRvb3RoJTIwc3BlYWtlcnxlbnwwfHwwfHx8MA%3D%3D",
     },
     {
       name: "Laptop Stand",
       price: 29.99,
       description:
         "Ergonomic laptop stand with adjustable height and sturdy construction.",
-      imageUrl: "https://images.unsplash.com/photo-1600180758890-5c9c3e1f7386",
+      imageUrl: "https://images.unsplash.com/photo-1593642634315-48f5414c3ad9",
     },
     {
       name: "USB-C Hub",
       price: 39.99,
       description:
         "Multi-port USB-C hub with HDMI, USB 3.0, and SD card reader for versatile connectivity.",
-      imageUrl: "https://images.unsplash.com/photo-1565200480338-72f51635c50c",
+      imageUrl:
+        "https://media.istockphoto.com/id/184841045/photo/memory-stick.webp?b=1&s=170667a&w=0&k=20&c=2Nau1PzmF6ss9shD0GVte30zUTsmREXTnQ1vdCKRuww=",
     },
   ];
 
   return (
     <div className="flex items-center justify-center flex-col">
       <NavBar />
-      <div className="flex items-center justify-center gap-5 flex-wrap">
+      <div className="flex items-center justify-center gap-5 flex-wrap mx-6">
         {productCards.map((product) => {
           return <Card product={product} />;
         })}
       </div>
+
       {/* <div className="flex items-center gap-3">
         <button
           className="bg-green-500 w-4 h-4 rounded-md flex items-center justify-center text-white"

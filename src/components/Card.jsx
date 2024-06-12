@@ -4,7 +4,7 @@ const Card = ({ product }) => {
   console.log(product);
 
   return (
-    <div className="w-72 mt-5 p-3 bg-[#f3f3f3] rounded-lg">
+    <div className="w-72 mt-5 p-3 bg-[#eeeeee] rounded-lg shadow-xl">
       <img src={product.imageUrl} alt="product" className="w-full rounded-lg" />
       <div>
         <div className="flex items-center justify-between my-4">
