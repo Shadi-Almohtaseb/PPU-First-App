@@ -4,7 +4,7 @@ import NavBar from "./components/Navbar.jsx";
 import Card from "./components/Card.jsx";
 
 function App() {
-  // const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0);
 
   // const handleIncreaseCount = () => {
   //   if (count >= 5) {
@@ -62,21 +62,22 @@ function App() {
   return (
     <div className="flex items-center justify-center flex-col">
       <NavBar />
+
       <div className="flex items-center justify-center gap-5 flex-wrap mx-6">
         {productCards.map((product) => {
-          return <Card product={product} />;
+          return <Card product={product} key={product.name} />;
         })}
       </div>
 
       {/* <div className="flex items-center gap-3">
         <button
-          className="bg-green-500 w-4 h-4 rounded-md flex items-center justify-center text-white"
+          className="bg-green-500 w-8 h-8 text-xl rounded-md flex items-center justify-center text-white"
           onClick={handleIncreaseCount}
         >
           +
         </button>
         <button
-          className="bg-green-500 w-4 h-4 rounded-md flex items-center justify-center text-white"
+          className="bg-green-500 w-8 h-8 text-xl rounded-md flex items-center justify-center text-white"
           onClick={handleDecreaseCount}
         >
           -
