@@ -96,6 +96,34 @@ function App() {
         })}
       </div>
 
+      <div className="flex items-center justify-center gap-5 flex-wrap mx-6 my-20">
+        {data.map((todo, index) => {
+          if (index <= 20) {
+            return (
+              <div className="w-72 mt-5 p-3 bg-[#eeeeee] rounded-lg shadow-xl">
+                <div className="flex items-center gap-4 flex-col">
+                  <span>
+                    {" "}
+                    <span className="font-bold">Title:</span> {todo.title}
+                  </span>
+                  <span>
+                    {todo.completed ? (
+                      <span className="bg-green-500 rounded-lg px-3 py-1 text-white">
+                        Done
+                      </span>
+                    ) : (
+                      <span className="bg-red-500 rounded-lg px-3 py-1 text-white">
+                        Not completed
+                      </span>
+                    )}
+                  </span>
+                </div>
+              </div>
+            );
+          }
+        })}
+      </div>
+
       {/* <div className="flex items-center gap-3">
         <button
           className="bg-green-500 w-8 h-8 text-xl rounded-md flex items-center justify-center text-white"
