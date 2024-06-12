@@ -1,11 +1,12 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from "./components/Navbar.jsx";
 import Card from "./components/Card.jsx";
 
 function App() {
-  const [count, setCount] = useState(0);
-  const [isTrue, setIsTrue] = useState(false);
+  // const [count, setCount] = useState(0);
+  // const [isTrue, setIsTrue] = useState(false);
+  const [data, setData] = useState([]);
 
   // const handleIncreaseCount = () => {
   //   if (count >= 5) {
@@ -60,10 +61,31 @@ function App() {
     },
   ];
 
-  const changeFlag = () => {
-    setIsTrue(!isTrue);
-  };
+  // const changeFlag = () => {
+  //   setIsTrue(!isTrue);
+  // };
 
+  // promise
+  // useEffect(() => {
+  //   const getTodos = () => {
+  //     fetch("https://jsonplaceholder.typicode.com/todos/")
+  //       .then((res) => res.json())
+  //       .then((data) => setData(data));
+  //   };
+  //   getTodos();
+  // }, []);
+
+  // Async
+  useEffect(() => {
+    const getTodos = async () => {
+      const res = await fetch("https://jsonplaceholder.typicode.com/todos/");
+      const data = await res.json();
+      setData(data);
+    };
+    getTodos();
+  }, []);
+
+  console.log("Data: ", data);
   return (
     <div className="flex items-center justify-center flex-col">
       <NavBar />
@@ -90,7 +112,7 @@ function App() {
       </div>
       <span className="redColor">{count}</span> */}
 
-      <div className="flex items-center flex-col mt-10">
+      {/* <div className="flex items-center flex-col mt-10">
         {isTrue ? <span>Yes its true</span> : <span>No its false</span>}
         <button
           className="px-4 py-2 bg-blue-500 text-white rounded-lg"
@@ -98,7 +120,7 @@ function App() {
         >
           Change the flag
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }
