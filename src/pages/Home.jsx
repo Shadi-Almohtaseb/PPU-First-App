@@ -1,4 +1,3 @@
-// import NavBar from "../components/Navbar";
 import Card from "../components/Card";
 import React, { useEffect, useState } from "react";
 
@@ -93,13 +92,26 @@ const Home = () => {
   }, []);
 
   console.log("Data: ", data);
+
+  const [cart, setCart] = useState(
+    () => JSON.parse(localStorage.getItem("cart")) || []
+  );
+
+  const addToCart = (product) => {
+    setCart([...cart, product]);
+  };
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
+
   return (
     <div className="flex items-center justify-center flex-col">
-      {/* <NavBar /> */}
-
       <div className="flex items-center justify-center gap-5 flex-wrap mx-6">
         {productCards.map((product) => {
-          return <Card product={product} key={product.name} />;
+          return (
+            <Card product={product} key={product.name} addToCart={addToCart} />
+          );
         })}
       </div>
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card = ({ product }) => {
+const Card = ({ product, addToCart }) => {
   return (
     <div className="w-72 mt-5 p-3 bg-[#eeeeee] rounded-lg shadow-xl">
       <img src={product.imageUrl} alt="product" className="w-full rounded-lg" />
@@ -14,11 +14,12 @@ const Card = ({ product }) => {
         </div>
       </div>
 
-      {/* <button
+      <button
+        onClick={() => addToCart(product)}
         className="w-full mt-4 bg-[#4bb1f0] py-2 rounded-lg text-white font-semibold"
       >
         Add to Cart
-      </button> */}
+      </button>
     </div>
   );
 };
