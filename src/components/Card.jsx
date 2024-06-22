@@ -13,6 +13,12 @@ const Card = ({ product }) => {
           <p>{product.description}</p>
         </div>
       </div>
+
+      {/* <button
+        className="w-full mt-4 bg-[#4bb1f0] py-2 rounded-lg text-white font-semibold"
+      >
+        Add to Cart
+      </button> */}
     </div>
   );
 };
