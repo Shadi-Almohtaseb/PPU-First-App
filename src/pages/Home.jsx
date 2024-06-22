@@ -1,4 +1,4 @@
-import NavBar from "../components/Navbar";
+// import NavBar from "../components/Navbar";
 import Card from "../components/Card";
 import React, { useEffect, useState } from "react";
 
@@ -95,7 +95,7 @@ const Home = () => {
   console.log("Data: ", data);
   return (
     <div className="flex items-center justify-center flex-col">
-      <NavBar />
+      {/* <NavBar /> */}
 
       <div className="flex items-center justify-center gap-5 flex-wrap mx-6">
         {productCards.map((product) => {
